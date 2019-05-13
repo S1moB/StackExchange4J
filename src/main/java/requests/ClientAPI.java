@@ -1,4 +1,4 @@
-package questions;
+package requests;
 
 public abstract class ClientAPI {
 

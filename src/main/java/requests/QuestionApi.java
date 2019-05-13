@@ -1,4 +1,4 @@
-package questions;
+package requests;
 
 import static constants.StackExchange.URL;
 

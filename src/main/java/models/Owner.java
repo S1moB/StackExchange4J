@@ -10,18 +10,18 @@ public final class Owner {
         "display_name": "Michael",
         "link": "https://stackoverflow.com/users/9266540/michael"
       }*/
-    private int user_id;
+
+    private int reputation;
+    private long user_id;
+
     private String user_type;
     private String profile_image;
     private String display_name;
     private String link;
-    private int reputation;
 
-    public Owner(){}
-
-    public int getUser_id() {
-        return user_id;
+    public Owner() {
     }
+
 
     public String getUser_type() {
         return user_type;
@@ -47,13 +47,24 @@ public final class Owner {
         this.user_id = user_id;
     }
 
+    public long getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(long user_id) {
+        this.user_id = user_id;
+    }
+
+
     public void setUser_type(String user_type) {
         this.user_type = user_type;
     }
 
+
     public void setProfile_image(String profile_image) {
         this.profile_image = profile_image;
     }
+
 
     public void setDisplay_name(String display_name) {
         this.display_name = display_name;

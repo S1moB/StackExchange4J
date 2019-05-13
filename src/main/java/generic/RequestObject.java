@@ -1,17 +1,15 @@
 package generic;
 
-import static utils.UtilsFunction.getJsonFromLink;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import models.Question;
+import org.json.JSONException;
+import requests.ClientAPI;
+import requests.QuestionApi;
 
 import java.util.List;
 
-import org.json.JSONException;
-
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import models.Question;
-import questions.ClientAPI;
-import questions.QuestionApi;
+import static utils.UtilsFunction.getJsonFromLink;
 
 public class RequestObject<T> {
 
