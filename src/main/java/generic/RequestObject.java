@@ -15,7 +15,7 @@ import questions.QuestionApi;
 
 public class RequestObject<T> {
 
-    public List<T> getObjects(ClientAPI questionApi, TypeToken type) throws JSONException {
+    public List<T> getObjects(ClientAPI questionApi) throws JSONException {
         String questionsJson = getJsonFromLink(questionApi.getLink());
         List<T> objects = new Gson().fromJson(questionsJson, getTypeFromApi(questionApi).getType());
         return objects;
