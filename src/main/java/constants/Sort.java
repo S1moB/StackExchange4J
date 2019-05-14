@@ -4,7 +4,8 @@ public enum Sort {
 
     VOTES("votes"),
     ACTIVITY("activity"),
-    CREATION("CREATION");
+    CREATION("creation"),
+    RELEVANCE("relevance");
 
    private String value;
 

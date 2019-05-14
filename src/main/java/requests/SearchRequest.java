@@ -19,7 +19,7 @@ public class SearchRequest extends ClientAPI {
         private StringBuilder url;
 
         public Builder(String question) {
-            url = new StringBuilder("https://api.stackexchange.com/2.2/search/advanced?pagesize=5")
+            url = new StringBuilder("https://api.stackexchange.com/2.2/search?pagesize=5")
                 .append(SEPARATOR)
                 .append("q=")
                 .append(question);
