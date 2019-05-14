@@ -2,15 +2,6 @@ package models;
 
 public final class Answer {
 
-         /* "is_accepted": false,
-              "score": 1,
-              "last_activity_date": 1557738306,
-              "last_edit_date": 1557738306,
-              "creation_date": 1557737946,
-              "answer_id": 56108925,
-              "question_id": 56108874
-      */
-
     private Owner owner;
     private boolean is_accepted;
     private int last_activity_date;

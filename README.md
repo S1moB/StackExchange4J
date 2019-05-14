@@ -31,7 +31,7 @@ In order to start or test this project
       <groupId>com.github.s1mob</groupId>
       <artifactId>StackExchange4J</artifactId>
       <version>${LastCommit}</version>
- </dependency>
+</dependency>
 ```
 
 

@@ -4,31 +4,6 @@ import java.util.List;
 
 public final class Question {
 
-    /*
-    * {
-      "tags": [
-        "vue.js",
-        "vuetify.js",
-        "stylus"
-      ],
-      "owner": {
-        "reputation": 104,
-        "user_id": 9266540,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/2821f32308af9261e10fdcc522490874?s=128&d=identicon&r=PG&f=1",
-        "display_name": "Michael",
-        "link": "https://stackoverflow.com/users/9266540/michael"
-      },
-      "is_answered": false,
-      "view_count": 1,
-      "answer_count": 0,
-      "score": 0,
-      "last_activity_date": 1557737512,
-      "creation_date": 1557737512,
-      "question_id": 56108805,
-      "link": "https://stackoverflow.com/questions/56108805/issue-with-stylus-and-vuetify",
-      "title": "Issue with Stylus and Vuetify"
-    }*/
     private boolean is_answered;
     private int view_count;
     private int answer_count;

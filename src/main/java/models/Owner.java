@@ -1,16 +1,6 @@
 package models;
 
 public final class Owner {
-    /*
-    * "owner": {
-        "reputation": 104,
-        "user_id": 9266540,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/2821f32308af9261e10fdcc522490874?s=128&d=identicon&r=PG&f=1",
-        "display_name": "Michael",
-        "link": "https://stackoverflow.com/users/9266540/michael"
-      }*/
-
     private int reputation;
     private long user_id;
 
