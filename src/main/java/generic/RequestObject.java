@@ -2,10 +2,13 @@ package generic;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
+import models.Answer;
 import models.Question;
 import org.json.JSONException;
 import requests.ClientAPI;
 import requests.QuestionApi;
+import requests.SearchRequest;
 
 import java.util.List;
 
@@ -23,7 +26,13 @@ public class RequestObject<T> {
         TypeToken type = new TypeToken<List>(){};
         if(questionApi instanceof QuestionApi)
         {
-            type = new TypeToken<List<Question>>(){};
+            if(((QuestionApi) questionApi).getLink().contains("answer"))
+                type = new TypeToken<List<Answer>>(){};
+            else
+                type = new TypeToken<List<Question>>(){};
+        }
+        else if(questionApi instanceof SearchRequest){
+            type=new TypeToken<List<Question>>(){};
         }
         return type;
     }

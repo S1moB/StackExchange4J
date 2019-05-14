@@ -2,7 +2,9 @@ package constants;
 
 public enum Sort {
 
-    VOTES("votes");
+    VOTES("votes"),
+    ACTIVITY("activity"),
+    CREATION("CREATION");
 
    private String value;
 

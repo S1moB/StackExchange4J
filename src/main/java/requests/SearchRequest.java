@@ -20,21 +20,21 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class SearchRequest {
+public class SearchRequest extends ClientAPI{
 
     public static final String ITEMS = "items";
 
-    private String searchRequest;
+
     private SearchRequest(StringBuilder url) {
-        searchRequest =url.toString();
+        link =url.toString();
     }
 
     public String getSearchRequest() {
-        return searchRequest;
+        return link;
     }
 
 
-    public List<Question> searchQuestions(){
+   /* public List<Question> searchQuestions(){
         List<Question> questions=new ArrayList<Question>();
         Client client = ClientBuilder.newBuilder().build();
         WebTarget target = client.target(searchRequest);
@@ -48,7 +48,7 @@ public class SearchRequest {
         }
         client.close();
         return questions;
-    }
+    }*/
 
     public static class Builder {
 

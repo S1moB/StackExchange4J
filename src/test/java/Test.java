@@ -4,16 +4,17 @@ import java.util.stream.Collectors;
 import constants.StackQuestionFilter;
 import constants.StackSite;
 import generic.RequestObject;
+import models.Answer;
 import models.Question;
-import questions.ClientAPI;
-import questions.QuestionApi;
+import requests.ClientAPI;
+import requests.QuestionApi;
 
 public class Test {
     public static void main(String[] args) throws Exception {
 
-        ClientAPI questionApi = new QuestionApi.Builder().addFilter(StackQuestionFilter.order,"asc").addSite(StackSite.StackOverflow).addBody().build();
-        RequestObject<Question> questionRequestObject = new RequestObject<>();
-        questionRequestObject.getObjects(questionApi).forEach(question -> System.out.println(question.getTitle()));
+        ClientAPI questionApi = new QuestionApi.Builder().answers(271187).addFilter(StackQuestionFilter.order,"asc").addSite(StackSite.StackOverflow).addBody().build();
+        RequestObject<Answer> questionRequestObject = new RequestObject<>();
+        questionRequestObject.getObjects(questionApi).forEach(question -> System.out.println(question.getBody()));
     }
     public static void testing (long ... tests)
     {
