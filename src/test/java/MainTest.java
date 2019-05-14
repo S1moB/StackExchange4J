@@ -27,7 +27,7 @@ public class MainTest {
     public void searchRequestTest() throws StackExchangeException, JSONException {
         RequestObject<Question> requestObject = new RequestObject<>();
         SearchRequest searchRequest = new SearchRequest.Builder("collection java")
-            .sort(Sort.VOTES)
+            .sort(Sort.RELEVANCE)
             .order(Order.DESC)
             .addSite(StackSite.StackOverflow)
             .addBody().build();

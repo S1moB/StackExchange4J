@@ -48,7 +48,7 @@ public class SearchRequest extends ClientAPI {
             if (url.toString().contains("site")) {
                 throw new StackExchangeException("You've already added a site");
             }
-            this.url.append("&site=").append(site);
+            this.url.append(SEPARATOR).append("site=").append(site);
             return this;
         }
 
