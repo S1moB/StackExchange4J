@@ -7,45 +7,48 @@ import java.util.stream.Collectors;
 
 import constants.StackQuestionFilter;
 import constants.StackSite;
+import exceptions.StackExchangeException;
 
 public class QuestionApi extends ClientAPI {
 
 
     public static class Builder {
-        private StringBuilder link = new StringBuilder(URL.getValue() + "questions");
+        private StringBuilder link = new StringBuilder(URL.getValue()).append("questions");
         private StringBuilder params = new StringBuilder();
         private boolean idExist = false;
-        public Builder addFilter(StackQuestionFilter param, String value) {
+        public Builder addFilter(StackQuestionFilter param, String value) throws StackExchangeException {
+            if(this.params.toString().contains(param.toString()))
+                throw new StackExchangeException("You've already added " + param.toString() +" filter");
             this.params.append("&").append(param).append("=").append(value);
             return this;
         }
 
-        public Builder addSite(StackSite site) throws Exception {
+        public Builder addSite(StackSite site) throws StackExchangeException {
             if (params.toString().contains("site")) {
-                throw new Exception("You've already added a site");
+                throw new StackExchangeException("You've already added a site");
             }
             this.params.append("&site=").append(site);
             return this;
         }
 
-        public Builder addBody() throws Exception {
+        public Builder addBody() throws StackExchangeException {
             if (params.toString().contains("filter")) {
-                throw new Exception("You've already added a filter");
+                throw new StackExchangeException("You've already added a filter");
             }
             this.params.append("&filter=withbody");
             return this;
         }
 
-        public Builder addID(long... ids) throws Exception {
+        public Builder addID(long... ids) throws StackExchangeException {
             if(idExist)
-                throw new Exception("Id Already exist");
+                throw new StackExchangeException("ID Already exist");
             String idsAsString = String.join(";", Arrays.stream(ids).mapToObj(String::valueOf).collect(Collectors.toList()));
-            link.append(idsAsString);
+            link.append("/").append(idsAsString);
             idExist = true;
             return this;
         }
 
-        public Builder answers(long... ids) throws Exception {
+        public Builder answers(long... ids) throws StackExchangeException {
             addID(ids);
             link.append("/answers");
             return this;
