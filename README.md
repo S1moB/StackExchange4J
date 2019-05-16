@@ -1,5 +1,4 @@
-# StackExchange Wrapper for Java 
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+# StackExchange Wrapper for Java [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 This project was created in order to provide easy way to use the stackexchange api 2.2
 
 ## Getting Started
