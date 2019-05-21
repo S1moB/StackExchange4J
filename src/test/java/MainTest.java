@@ -4,11 +4,9 @@ import org.json.JSONException;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
 import constants.Order;
-import constants.Sort;
+import constants.QuestionSort;
+import constants.SearchSort;
 import constants.StackQuestionFilter;
 import constants.StackSite;
 import exceptions.StackExchangeException;
@@ -17,7 +15,6 @@ import models.Answer;
 import models.Question;
 import requests.QuestionApi;
 import requests.SearchRequest;
-import utils.UtilsFunction;
 
 public class MainTest {
 
@@ -27,7 +24,7 @@ public class MainTest {
     public void searchRequestTest() throws StackExchangeException, JSONException {
         RequestObject<Question> requestObject = new RequestObject<>();
         SearchRequest searchRequest = new SearchRequest.Builder("collection java")
-            .sort(Sort.RELEVANCE)
+            .sort(SearchSort.RELEVANCE)
             .order(Order.DESC)
             .addSite(StackSite.StackOverflow)
             .addBody().build();
@@ -48,8 +45,9 @@ public class MainTest {
     public void AnswerTest() throws StackExchangeException, JSONException {
         RequestObject<Answer> requestObject = new RequestObject<>();
         QuestionApi answerRequest = new QuestionApi.Builder()
-            .answers(3730019)
-            .addFilter(StackQuestionFilter.order,"asc")
+            .answers(50360477)
+            .addFilter(StackQuestionFilter.order,"desc")
+            .addSort(QuestionSort.VOTES)
             .addSite(StackSite.StackOverflow)
             .addBody().build();
         List<Answer> answers = requestObject.getObjects(answerRequest);

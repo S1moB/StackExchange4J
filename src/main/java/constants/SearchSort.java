@@ -1,6 +1,6 @@
 package constants;
 
-public enum Sort {
+public enum SearchSort {
 
     VOTES("votes"),
     ACTIVITY("activity"),
@@ -9,7 +9,7 @@ public enum Sort {
 
    private String value;
 
-    Sort(String value) {
+    SearchSort(String value) {
         this.value=value;
     }
 

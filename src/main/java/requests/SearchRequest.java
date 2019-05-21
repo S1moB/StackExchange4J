@@ -1,7 +1,7 @@
 package requests;
 
 import constants.Order;
-import constants.Sort;
+import constants.SearchSort;
 import constants.StackSite;
 import exceptions.StackExchangeException;
 
@@ -25,11 +25,11 @@ public class SearchRequest extends ClientAPI {
                 .append(question);
         }
 
-        public Builder sort(Sort sort) {
+        public Builder sort(SearchSort searchSort) {
 
             url.append(SEPARATOR)
-                .append("sort=")
-                .append(sort.getValue());
+                .append("searchSort=")
+                .append(searchSort.getValue());
             return this;
         }
 
@@ -37,7 +37,6 @@ public class SearchRequest extends ClientAPI {
             if (!url.toString().contains("sort")) {
                 throw new StackExchangeException("no sort Property");
             }
-
             url.append(SEPARATOR)
                 .append("order=")
                 .append(order.getValue());

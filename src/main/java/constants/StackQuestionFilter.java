@@ -8,6 +8,6 @@ public enum StackQuestionFilter {
     order,
     min,
     max,
-   // sort,
+    sort,
     site;
 }
