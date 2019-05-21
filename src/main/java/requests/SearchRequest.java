@@ -28,7 +28,7 @@ public class SearchRequest extends ClientAPI {
         public Builder sort(SearchSort searchSort) {
 
             url.append(SEPARATOR)
-                .append("searchSort=")
+                .append("sort=")
                 .append(searchSort.getValue());
             return this;
         }
